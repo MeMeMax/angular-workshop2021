@@ -11,7 +11,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  form = { email: 'test', password: '' };
   constructor() {}
 
   ngOnInit(): void {}
+
+  submit() {
+    console.log(this.form);
+  }
 }
