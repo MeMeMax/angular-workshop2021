@@ -12,14 +12,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  form: FormGroup = this.fb.group({ email: ['', [Validators.required, Validators.min(5)]], password: ['', Validators.required] });
+  form!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
+    this.createForm();
+
     this.form.get('email')?.valueChanges.subscribe((res) => {
       console.log(res);
     });
+  }
+
+  createForm() {
+    this.form = this.fb.group({ email: ['', [Validators.required, Validators.min(5)]], password: ['', Validators.required] });
   }
 
   submit() {
