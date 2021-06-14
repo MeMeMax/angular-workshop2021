@@ -4,6 +4,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'wsp-login',
@@ -11,12 +12,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  form = { email: 'test', password: '' };
-  constructor() {}
+  form: FormGroup = this.fb.group({ email: ['', [Validators.required, Validators.min(5)]], password: ['', Validators.required] });
+
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {}
 
+  ngAfterViewInit() {
+    this.form.controls['email'].valueChanges.subscribe((res) => {
+      console.log(res);
+    });
+  }
+
   submit() {
-    console.log(this.form);
+    if (this.form.valid) {
+      console.log(this.form.getRawValue());
+    }
   }
 }
