@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.form.controls['email'].valueChanges.subscribe((res) => {
+    this.form.get('email')?.valueChanges.subscribe((res) => {
       console.log(res);
     });
   }
