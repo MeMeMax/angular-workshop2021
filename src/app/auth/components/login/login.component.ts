@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   submit() {
     if (this.form.valid) {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['heroes', 'dashboard']);
     }
   }
 }
