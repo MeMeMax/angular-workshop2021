@@ -5,6 +5,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'wsp-login',
@@ -14,7 +15,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -25,12 +26,12 @@ export class LoginComponent implements OnInit {
   }
 
   createForm() {
-    this.form = this.fb.group({ email: ['', [Validators.required, Validators.min(5)]], password: ['', Validators.required] });
+    this.form = this.fb.group({ email: ['test', [Validators.required, Validators.min(5)]], password: ['test', Validators.required] });
   }
 
   submit() {
     if (this.form.valid) {
-      console.log(this.form.getRawValue());
+      this.router.navigate(['dashboard']);
     }
   }
 }
