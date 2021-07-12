@@ -1,0 +1,8 @@
+{
+  "heroes": [
+    { "id": 1, "name": "Bombasto" },
+    { "id": 2, "name": "Magneta" },
+    { "id": 3, "name": "Dr IQ" },
+    { "id": 4, "name": "Magma" }
+  ]
+}
