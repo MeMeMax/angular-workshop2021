@@ -76,6 +76,7 @@
               "browserTarget": "angular-workshop2021:build:development"
             }
           },
+          "options": { "proxyConfig": "proxy.conf.json" },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
