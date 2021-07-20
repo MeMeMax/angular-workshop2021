@@ -1,5 +1,6 @@
 {
   "port": 3001,
   "watch": true,
-  "routes": "routes.json"
+  "routes": "routes.json",
+  "no-cors": true
 }
