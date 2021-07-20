@@ -1,8 +1,12 @@
 {
   "heroes": [
-    { "id": 1, "name": "Bombasto" },
-    { "id": 2, "name": "Magneta" },
-    { "id": 3, "name": "Dr IQ" },
-    { "id": 4, "name": "Magma" }
+    { "id": 1, "name": "Bombasto", "type": "strength" },
+    { "id": 2, "name": "Magneta", "type": "agility" },
+    { "id": 3, "name": "Dr IQ", "type": "intelligence" },
+    { "id": 4, "name": "Magma", "type": "strength" },
+    { "id": 5, "name": "Narco", "type": "intelligence" },
+    { "id": 6, "name": "Mr. Nice", "type": "intelligence" },
+    { "id": 7, "name": "RubberMan", "type": "strength" },
+    { "id": 8, "name": "Tornado", "type": "agility" }
   ]
 }
