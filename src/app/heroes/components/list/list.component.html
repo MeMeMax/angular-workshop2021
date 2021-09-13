@@ -1,1 +1,7 @@
-<p>list works!</p>
+<div class="row">
+  <div class="col-md-3 mt-3" *ngFor="let hero of heroes">
+    <div class="tile d-flex justify-content-center align-items-center bg-primary text-white">
+      <div>{{ hero.name }} ({{ hero.type }})</div>
+    </div>
+  </div>
+</div>

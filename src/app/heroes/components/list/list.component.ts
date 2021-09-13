@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Hero } from '../../models/hero.model';
 
 @Component({
   selector: 'wsp-list',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  @Input() heroes!: Array<Hero>;
+
   constructor() {}
 
   ngOnInit(): void {}
