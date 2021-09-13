@@ -9,14 +9,23 @@ import { HeroesService } from '../../services/heroes.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  heroes: Array<Hero> = [];
+  heroes: Array<Hero> = [{ id: 1, name: 'test', type: 'agility' }];
 
   constructor(private heroesService: HeroesService) {}
 
   ngOnInit(): void {
-    this.heroesService.getHeroes().subscribe((res) => {
-      console.log(res);
-      this.heroes = res.slice(0, 4);
-    });
+    // this.heroesService.getHeroes().subscribe((res) => {
+    //   this.heroes = res.slice(0, 4);
+    // });
+  }
+
+  addHero() {
+    this.heroes = [...this.heroes, { id: 2, name: 'test2', type: 'strength' }];
+    console.log(this.heroes);
+  }
+
+  changeName() {
+    this.heroes[0].name = 'abc';
+    this.heroes = [...this.heroes];
   }
 }
